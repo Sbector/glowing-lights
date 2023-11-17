@@ -16,7 +16,7 @@ export default function Light() {
             <pointLight
                 intensity={0} ref={ref}
             />
-            <sphereGeometry />
+            <sphereGeometry args={[1, 6, 2]}/>
             <MeshTransmissionMaterial
                 background={new THREE.Color('#ff0000')}
                 backside={true}
