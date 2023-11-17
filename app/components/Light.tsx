@@ -1,11 +1,15 @@
+import { useRef } from 'react'
 import { MeshTransmissionMaterial } from "@react-three/drei"
-import { SphereGeometry } from "three"
 import * as THREE from 'three'
 
 export default function Light() {
+
     return (
         <mesh>
-            <sphereGeometry/>
+            <pointLight          
+            power={100}
+            />
+            <sphereGeometry />
             <MeshTransmissionMaterial 
             background={new THREE.Color('#ff0000')} 
             backside={true} 
