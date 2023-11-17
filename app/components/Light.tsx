@@ -2,9 +2,9 @@ import { MeshTransmissionMaterial } from "@react-three/drei"
 import { SphereGeometry } from "three"
 import * as THREE from 'three'
 
-export default function Light(props) {
+export default function Light() {
     return (
-        <mesh {...props}>
+        <mesh>
             <sphereGeometry/>
             <MeshTransmissionMaterial 
             background={new THREE.Color('#ff0000')} 
@@ -17,7 +17,7 @@ export default function Light(props) {
             ior={3.5}
             anisotropy={1.4} 
             distortion={0.1} 
-            distortionScale={1} 
+            distortionScale={20} 
             temporalDistortion={0.5} 
             clearcoat={1} 
             attenuationDistance={0.5} 
