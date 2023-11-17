@@ -28,7 +28,8 @@ export default function Light() {
                 ior={10}
                 anisotropy={3}
                 distortion={0.4}
-                distortionScale={400}
+                distortionScale={300}
+                temporalDistortion={0.1}
                 attenuationColor="#ffffff"
                 color="#ff0000" />
         </mesh>
