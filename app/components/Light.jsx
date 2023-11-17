@@ -1,32 +1,36 @@
 import { useRef } from 'react'
 import { MeshTransmissionMaterial } from "@react-three/drei"
 import * as THREE from 'three'
+import { useFrame } from '@react-three/fiber'
 
 export default function Light() {
+    const ref = useRef()
 
+    useFrame((state,delta)=>{
+        ref.current.intensity = Math.abs(Math.sin(state.clock.elapsedTime/0.8)*5)
+        console.log(ref.current.intensity)
+    })
+    
     return (
         <mesh>
-            <pointLight          
-            power={100}
+            <pointLight
+                intensity={0} ref={ref}
             />
             <sphereGeometry />
-            <MeshTransmissionMaterial 
-            background={new THREE.Color('#ff0000')} 
-            backside={true} 
-            samples={2} 
-            resolution={80} 
-            transmission={0.2} 
-            roughness={0} 
-            thickness={0.45} 
-            ior={3.5}
-            anisotropy={1.4} 
-            distortion={0.1} 
-            distortionScale={20} 
-            temporalDistortion={0.5} 
-            clearcoat={1} 
-            attenuationDistance={0.5} 
-            attenuationColor="#ffffff" 
-            color="#ff0000" />
+            <MeshTransmissionMaterial
+                background={new THREE.Color('#ff0000')}
+                backside={true}
+                samples={4}
+                resolution={35}
+                transmission={0.15}
+                roughness={0.1}
+                thickness={0.2}
+                ior={10}
+                anisotropy={3}
+                distortion={0.4}
+                distortionScale={400}
+                attenuationColor="#ffffff"
+                color="#ff0000" />
         </mesh>
     )
 }
