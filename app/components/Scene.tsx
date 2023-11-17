@@ -10,7 +10,7 @@ export default function Scene() {
             camera={{ position: [0, 0, 3] }}
             gl={{ toneMapping: ACESFilmicToneMapping, toneMappingExposure: 2.5 }}
         >
-            <pointLight intensity={10} />
+            <pointLight intensity={11} />
             <Light position={[0,0,0]}/>
         </Canvas>
     )
