@@ -4,7 +4,6 @@ import { ACESFilmicToneMapping } from "three"
 import Light from "./Light"
 import { ArcballControls } from "@react-three/drei"
 
-
 export default function Scene() {
     const onDoubleClick = (e) => {
         e.target.requestFullscreen().catch((err) => {

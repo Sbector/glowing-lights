@@ -6,10 +6,7 @@ export default function Home() {
     <>
       <Scene />
       <div className="mensaje">
-        if(canvas.requestFullscreen!){
-          <h1 className='text-stone-800'>Double tap to fullscreen</h1>
-        }
-
+        <h1 className='text-stone-800'>Double tap to fullscreen</h1>
       </div>
     </>
   )
