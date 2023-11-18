@@ -10,3 +10,11 @@ body,
   margin: 0;
   background: #000000;
 }
+
+.mensaje {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -10%);
+}
