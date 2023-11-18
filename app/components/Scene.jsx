@@ -6,8 +6,14 @@ import { ArcballControls } from "@react-three/drei"
 
 
 export default function Scene() {
+    const onDoubleClick = (e) => {
+        e.target.requestFullscreen().catch((err) => {
+            alert('Open in a seperate tab to allow fullscreen access')
+        })
+    }
+
     return (
-        <Canvas
+        <Canvas onDoubleClick={onDoubleClick}
             camera={{ position: [0, 0, 3] }}
             gl={{ toneMapping: ACESFilmicToneMapping, toneMappingExposure: 2.5 }}
         >
