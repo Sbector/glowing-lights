@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef,useEffect } from 'react'
 import { MeshTransmissionMaterial } from "@react-three/drei"
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
@@ -8,7 +8,6 @@ export default function Light() {
 
     useFrame((state, delta) => {
         ref.current.intensity = Math.abs(Math.sin(state.clock.elapsedTime / 0.8) * 5)
-        console.log(window.innerWidth)
     })
 
     return (
@@ -21,7 +20,7 @@ export default function Light() {
                 background={new THREE.Color('#ff0000')}
                 backside={true}
                 samples={4}
-                resolution={90}
+                resolution={window.innerWidth/10}
                 transmission={0.15}
                 roughness={0.1}
                 thickness={0.2}
